@@ -29,15 +29,15 @@ mongoose.connect(
 .then(() => console.log("MongoDB successfully connected"))
 .catch(err => console.log(err));
 
-mongoose.connect(db, 
-    { server: { 
-        // sets how many times to try reconnecting
-        reconnectTries: Number.MAX_VALUE,
-        // sets the delay between every retry (milliseconds)
-        reconnectInterval: 1000 
-        } 
-    }
-);
+// mongoose.connect(db, 
+//     { server: { 
+//         // sets how many times to try reconnecting
+//         reconnectTries: Number.MAX_VALUE,
+//         // sets the delay between every retry (milliseconds)
+//         reconnectInterval: 1000 
+//         } 
+//     }
+// );
 
 //passport middleware
 app.use(passport.initialize());
@@ -59,14 +59,14 @@ app.use("/api/items", items);
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
     // Set static folder
-    //app.use(express.static('client/build'));
+    app.use(express.static('client/build'));
 
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
 }
 
-// const port = process.env.PORT || 5000;
-app.set("port", (process.env.PORT || 5000));
-app.listen(app.get("port"), () => console.log(`Server up and running on port ${port}!`));
+const port = process.env.PORT || 5000;
+// app.set("port", (process.env.PORT || 5000));
+app.listen(port, () => console.log(`Server up and running on port ${port}!`));
 
