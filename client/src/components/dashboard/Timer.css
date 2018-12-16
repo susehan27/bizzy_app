@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+
+.container {
+  /* justify-content: center;
+  align-items: center; */
+  height: 100%;
+
+}
+.Timer {
+  align-items: center;
+  justify-content: center; 
+  width: 400px;
+  height: 200px;
+  color: white;
+  font-size: 2.5rem;
+}
+.clock {
+  width: 200px;
+  font-size: 100px;
+  padding: 20px;
+}
+.text {
+  text-align: center;
+}
+.gradient-border {
+  --borderWidth: 3px;
+  background: #1D1F20;
+  position: relative;
+  border-radius: var(--borderWidth);
+  margin: 30px;
+  color:white;
+}
+.gradient-border:after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+
+.timerControls {
+  text-align: center;
+  float: center;
+}
+
+.btn {
+  margin: 5px;
+}
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+
+.workMode {
+  color: white;
+  background-color: #f37055;
+  width: 300px;
+  height: 150px;
+  padding: 10px;
+  border-radius: 10px; 
+  margin: 10px auto;
+}
+
+.playMode {
+  color: white;
+  background-color: #1098ad;
+  width: 300px;
+  height: 150px;
+  padding: 10px;
+  border-radius: 10px; 
+  margin: 10px auto;
+}
