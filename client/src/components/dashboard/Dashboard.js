@@ -39,7 +39,11 @@ class Dashboard extends Component {
                                         <p>break down your work time efficiently!</p>
                                     </div>
                                     <div className="card-action">
-                                        <a href="/timer"> go </a>
+                                        <a>
+                                            <Link
+                                            to="/timer"
+                                            >go</Link>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -50,7 +54,11 @@ class Dashboard extends Component {
                                         <p>need help concentrating?</p>
                                     </div>
                                     <div className="card-action">
-                                        <a href="/mindfulness"> go </a>
+                                        <a>
+                                            <Link
+                                            to="/mindfulness"
+                                            >go</Link>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +69,11 @@ class Dashboard extends Component {
                                         <p>view all your tasks!</p>
                                     </div>
                                     <div className="card-action">
-                                        <a href="/tasks"> go </a>
+                                        <a>
+                                            <Link
+                                            to="/tasks"
+                                            >go</Link>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
