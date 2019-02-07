@@ -62,7 +62,7 @@ class TaskItems extends Component {
                             textClassName='black-text' 
                             className="roboto card col s3"
                             title={taskName}
-                            name={taskType}
+                            //name={taskType}
                         >
                             <div className="card-content">
                                 <p><strong>Type:</strong> {taskType}</p>

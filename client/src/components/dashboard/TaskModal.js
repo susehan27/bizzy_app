@@ -79,7 +79,7 @@ class TaskModal extends Component {
                                         <option value="Home">Home</option>
                                         <option value="Extracurricular">Extracurricular</option>
                                     </select>
-                                    <label>Type of Task</label>
+                                    <label htmlFor="taskType">Type of Task</label>
                                 </div>
                                 <div className="input-field col s12 center-align">
                                     <input 
