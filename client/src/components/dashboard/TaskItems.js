@@ -12,28 +12,7 @@ class TaskItems extends Component {
             color: ""
         };
 
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange = e => {
-        this.setState({
-            [e.target.name]: e.target.color
-        })
-        if (this.props.item.taskType === "School") {
-            this.setState({color: "93462e"});
-        }
-        else if (this.props.item.taskType === "Work") {
-            this.setState({color: "e0d5bf"});
-        }
-        else if (this.props.item.taskType === "Home") {
-            this.setState({color: "998f7e"});
-        }
-        else if (this.props.item.taskType === "Personal") {
-            this.setState({color: "283644"});
-        }
-        else {
-            this.setState({color: "ff7d5a"});
-        }
+        //this.handleChange = this.handleChange.bind(this);
     }
 
     componentDidMount() {
@@ -53,35 +32,34 @@ class TaskItems extends Component {
 
         return(
             <div className="col s12">
-                
                     {items.map(({_id, taskName, taskType, dueDate, taskMemo}) => (
                         <Card 
-                            style={{backgroundColor: this.state.color, margin: "10px", float: "center", backgroundColor: "#e0d5bf"}} 
+                            style={{width: "40vh", height: "40vh", margin: "10px", float: "left", backgroundColor: "#e0d5bf"}} 
                             onChange={this.handleChange}
                             key={_id}
-                            textClassName='black-text' 
-                            className="roboto card col s3"
+                            className="roboto card black-text"
                             title={taskName}
-                            //name={taskType}
+                            actions={[
+                            <div>
+                                <Button onClick={this.onClick.bind(this, _id)}>complete</Button>
+                                <Button
+                                        className="remove-btn"
+                                        id="xButton"
+                                        color="light"
+                                        size="sm"
+                                        onClick={this.onDeleteClick.bind(this, _id)}
+                                >&times;
+                                </Button>
+                            </div>
+                            ]}
                         >
-                            <div className="card-content">
+                            <div style={{overflow:"scroll"}}>
                                 <p><strong>Type:</strong> {taskType}</p>
                                 <p><strong>Due Date:</strong> {dueDate}</p>
                                 <p><strong>Memo:</strong> {taskMemo}</p>
                             </div>
-                            <Button onClick={this.onClick.bind(this, _id)}>complete task</Button>
-                            
-                            <Button
-                                    className="remove-btn"
-                                    id="xButton"
-                                    color="light"
-                                    size="sm"
-                                    onClick={this.onDeleteClick.bind(this, _id)}
-                                >&times;
-                            </Button>
                         </Card>
                     ))}
-                
             </div>
         )
     }

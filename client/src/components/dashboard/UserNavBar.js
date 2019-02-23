@@ -15,14 +15,21 @@ class UserNavBar extends Component {
         const { user } = this.props.auth;
 
         return (
-            <div className="row navbar-fixed">
+            <div className="row">
                 <nav
                     style={{
-                        backgroundColor: "#ff7d5a",
+                        backgroundColor: "#ff7d5a"
                     }}
+                    className="nav-wrapper"
                 >
-                    <div className="nav center">
-                        <ul id="nav-mobile" className="right">
+                        <ul 
+                            id="nav-mobile" 
+                            style= {{
+                                display: "inline-block",
+                                textAlign: "center",
+                                margin: "0 auto"
+                            }}
+                        >
                             <li>
                                 <Link
                                     to="/dashboard"
@@ -49,7 +56,6 @@ class UserNavBar extends Component {
                                 >Logout</a>
                             </li>
                         </ul>
-                    </div>
                 </nav>
             </div>
         )

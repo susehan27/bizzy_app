@@ -53,7 +53,7 @@ class TaskModal extends Component {
                     
                     <Modal 
                         header="Add Task"
-                        trigger={<Button>add task</Button>}
+                        trigger={<Button className="pulse">add task</Button>}
                     >
                         <Row>
                             <form noValidate onSubmit={this.onSubmit}>
@@ -63,7 +63,15 @@ class TaskModal extends Component {
                                         name="taskName"
                                         onChange={this.onChange}
                                     />
-                                    <label htmlFor="taskName">Task Name</label>
+                                    <label for="taskName">Task Name</label>
+                                </div>
+                                <div className="input-field col s12 center-align">
+                                    <input 
+                                        type="date"
+                                        name="dueDate"
+                                        onChange={this.onChange}
+                                    />
+                                    <label for="taskDate">Due Date</label>
                                 </div>
                                 <div className="input-field col s12 center-align">
                                     <select 
@@ -76,25 +84,16 @@ class TaskModal extends Component {
                                         <option value="Work">Work</option>
                                         <option value="Home">Home</option>
                                         <option value="Personal">Personal</option>
-                                        <option value="Home">Home</option>
                                         <option value="Extracurricular">Extracurricular</option>
                                     </select>
-                                    <label htmlFor="taskType">Type of Task</label>
-                                </div>
-                                <div className="input-field col s12 center-align">
-                                    <input 
-                                        type="text"
-                                        name="dueDate"
-                                        onChange={this.onChange}
-                                    />
-                                    <label htmlFor="taskDate">Due Date</label>
+                                    <label for="taskType">Type of Task</label>
                                 </div>
                                 <div className="input-field col s12 center-align">
                                     <input 
                                         type="text"
                                         name="taskMemo"
                                         onChange={this.onChange}/>
-                                    <label htmlFor="taskMemo">Memo</label>
+                                    <label for="taskMemo">Memo</label>
                                 </div>
                                 <div className="modal-footer">
                                     <Button type="submit" className="modal-action modal-close btn btn-flat">Add</Button>
