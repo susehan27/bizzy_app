@@ -77,6 +77,7 @@ class TaskModal extends Component {
                                     <select
                                         name="taskType" 
                                         onChange={this.onChange}
+                                        className="browser-default"
                                     >
                                         <option value="" disabled selected>Choose one</option>
                                         <option value="School">School</option>
