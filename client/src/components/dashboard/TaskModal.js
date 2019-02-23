@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 import {addItem} from "../../actions/itemActions";
-import {Modal, Button, Row} from "react-materialize";
+import {Modal, Button, Row, Input} from "react-materialize";
 
 class TaskModal extends Component {
     constructor() {
@@ -74,11 +74,9 @@ class TaskModal extends Component {
                                     <label for="taskDate">Due Date</label>
                                 </div>
                                 <div className="input-field col s12 center-align">
-                                    <select 
-                                        type="select"
+                                    <select
                                         name="taskType" 
                                         onChange={this.onChange}
-                                        class="browser-default"
                                     >
                                         <option value="" disabled selected>Choose one</option>
                                         <option value="School">School</option>
