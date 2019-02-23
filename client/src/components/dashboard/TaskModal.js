@@ -74,6 +74,9 @@ class TaskModal extends Component {
                                     <label for="taskDate">Due Date</label>
                                 </div>
                                 <div className="input-field col s12 center-align">
+                                    <div>
+                                        <label className="left" for="taskType">Type of Task</label>
+                                    </div>
                                     <select
                                         name="taskType" 
                                         onChange={this.onChange}
@@ -86,7 +89,6 @@ class TaskModal extends Component {
                                         <option value="Personal">Personal</option>
                                         <option value="Extracurricular">Extracurricular</option>
                                     </select>
-                                    <label for="taskType">Type of Task</label>
                                 </div>
                                 <div className="input-field col s12 center-align">
                                     <input 
